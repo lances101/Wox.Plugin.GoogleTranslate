@@ -1,0 +1,12 @@
+﻿{
+  "ID": "D2D2C23B084D411DB66FE0C79E6C2A6H",
+  "ActionKeyword": "tr",
+  "Name": "Translate",
+  "Description": "Plugin that allow you to translate any words to any languages",
+  "Author": "Armaldio, boromak",
+  "Version": "1.0.2",
+  "Language": "csharp",
+  "Website": "http://www.getwox.com",
+  "IcoPath": "Images\\pic.png",
+  "ExecuteFileName": "Wox.Plugin.Translate.dll"
+}
