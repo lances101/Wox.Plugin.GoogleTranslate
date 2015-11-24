@@ -1,3 +1,3 @@
-# Wox.Plugin.Translate
+# Wox.Plugin.GoogleTranslate
 
-use `wpm install gtranslate`
+use `wpm install googletranslate`
