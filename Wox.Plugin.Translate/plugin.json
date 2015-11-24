@@ -1,12 +1,12 @@
 ﻿{
-  "ID": "D2D2C23B084D411DB66FE0C79E6C2A6H",
+  "ID": "FD6F596596184119B027D6D81D0C2742",
   "ActionKeyword": "tr",
-  "Name": "Translate",
+  "Name": "Google Translate",
   "Description": "Plugin that allow you to translate any words to any languages",
   "Author": "Armaldio, boromak",
   "Version": "1.0.2",
   "Language": "csharp",
   "Website": "http://www.getwox.com",
   "IcoPath": "Images\\pic.png",
-  "ExecuteFileName": "Wox.Plugin.Translate.dll"
+  "ExecuteFileName": "Wox.Plugin.GoogleTranslate.dll"
 }

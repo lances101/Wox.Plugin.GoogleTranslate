@@ -3,6 +3,7 @@
 // Assembly: TranslateWox, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
 // MVID: 0A51035E-8791-4FC6-8557-D3506E321CD1
 
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -10,14 +11,12 @@ using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using System.Windows;
-using System;
 using System.Web;
-using Wox.Plugin.Features;
+using System.Windows;
 
-namespace Wox.Plugin.Translate
+namespace Wox.Plugin.GoogleTranslate
 {
-    public class TranslatePlugin : IPlugin, IContextMenu
+    public class GoogleTranslatePlugin : IPlugin, IContextMenu
     {
         private PluginInitContext _context;
 

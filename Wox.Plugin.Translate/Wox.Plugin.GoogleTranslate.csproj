@@ -7,8 +7,8 @@
     <ProjectGuid>{A75CBF0D-5253-419A-B123-C52E1D0A2C95}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Wox.Plugin.Translate</RootNamespace>
-    <AssemblyName>Wox.Plugin.Translate</AssemblyName>
+    <RootNamespace>Wox.Plugin.GoogleTranslate</RootNamespace>
+    <AssemblyName>Wox.Plugin.GoogleTranslate</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,8 +16,8 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>D:\Program Files\WoxBeta\Plugins\Wox.Plugin.GoogleTranslate\</OutputPath>
+    <DefineConstants>TRACE;DEBUG; </DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TranslatePlugin.cs" />
+    <Compile Include="GoogleTranslatePlugin.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\pic.png">

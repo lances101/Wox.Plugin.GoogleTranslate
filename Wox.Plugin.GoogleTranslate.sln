@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wox.Plugin.Translate", "Wox.Plugin.Translate\Wox.Plugin.Translate.csproj", "{A75CBF0D-5253-419A-B123-C52E1D0A2C95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wox.Plugin.GoogleTranslate", "Wox.Plugin.Translate\Wox.Plugin.GoogleTranslate.csproj", "{A75CBF0D-5253-419A-B123-C52E1D0A2C95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
