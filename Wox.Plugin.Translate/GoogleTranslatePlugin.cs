@@ -41,6 +41,10 @@ namespace Wox.Plugin.GoogleTranslate
                 "az"
             },
             {
+                "Bengali",
+                "bn"
+            },
+            {
                 "Basque",
                 "eu"
             },
