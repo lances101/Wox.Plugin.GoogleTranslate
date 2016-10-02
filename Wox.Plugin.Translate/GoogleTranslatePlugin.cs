@@ -22,7 +22,7 @@ namespace Wox.Plugin.GoogleTranslate
 
         #region Languages
 
-        public string[,] Languages = new string[64, 2]
+        public string[,] Languages = new string[,]
         {
             {
                 "Afrikaans",
