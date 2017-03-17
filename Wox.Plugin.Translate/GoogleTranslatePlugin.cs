@@ -2,6 +2,7 @@
 using System.Diagnostics;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Web;
 using System.Windows;
 
@@ -314,6 +315,7 @@ namespace Wox.Plugin.GoogleTranslate
                 var input = query.SecondToEndSearch.Substring(query.SecondToEndSearch.IndexOf(query.ThirdSearch));
                 var from = query.FirstSearch;
                 var to = query.SecondSearch;
+                Thread.Sleep(500);
                 var str = TranslateText(input, from, to);
                 list.Add(new Result
                 {
