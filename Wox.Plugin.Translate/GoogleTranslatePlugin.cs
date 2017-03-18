@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading;
 using System.Web;
@@ -217,6 +219,9 @@ namespace Wox.Plugin.GoogleTranslate
         /// <returns>downloaded string</returns>
         public string GetPageHtml(string url)
         {
+            string cached_page = GetCachedPageForUrl(url);
+            if(cached_page != null)
+                return cached_page;
             var client = new WebClient {Encoding = Encoding.UTF8};
             client.Headers.Add("user-agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)");
 
@@ -224,13 +229,26 @@ namespace Wox.Plugin.GoogleTranslate
             {
                 try
                 {
-                    return client.DownloadString(url);
+                    var pageString = client.DownloadString(url);
+                    CachePage(url, pageString);
+                    return pageString;
                 }
                 catch
                 {
                     return null;
                 }
             }
+        }
+
+        private void CachePage(string url, string pageString)
+        {
+            var cache = MemoryCache.Default;
+            cache.Add(url, pageString, DateTimeOffset.Now.AddHours(1));
+        }
+        private string GetCachedPageForUrl(string url)
+        {
+            var cache = MemoryCache.Default;
+            return cache.Get(url) as string;
         }
     }
 }
