@@ -3,10 +3,10 @@
   "ActionKeyword": "tr",
   "Name": "Google Translate",
   "Description": "Plugin that allow you to translate any words to any languages",
-  "Author": "Armaldio, boromak",
-  "Version": "1.0.5",
+  "Author": "Armaldio, Boromak, Sobuj",
+  "Version": "1.0.6",
   "Language": "csharp",
-  "Website": "http://www.getwox.com",
+  "Website": "http://www.wox.one/plugin/60",
   "IcoPath": "Images\\pic.png",
   "ExecuteFileName": "Wox.Plugin.GoogleTranslate.dll"
 }
