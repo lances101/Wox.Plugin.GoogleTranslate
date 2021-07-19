@@ -1,4 +1,5 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -38,10 +39,10 @@ namespace Wox.Plugin.GoogleTranslate
 
         public string[,] Languages =
         {
-            {"Afrikaans", "af"}, {"Albanian", "sq"}, {"Arabic", "ar"},
-            {"Azerbaijani", "az"}, {"Bengali", "bn"}, {"Basque", "eu"},
-            {"Korean", "ko"}, {"Belarusian", "be"}, {"Bulgarian", "bg"},
-            {"Catalan", "ca"}, {"Chinese Simplified", "zh-CN"},
+            {"Auto Detect", "auto"}, {"Afrikaans", "af"}, {"Albanian", "sq"}, 
+            {"Arabic", "ar"}, {"Azerbaijani", "az"}, {"Bengali", "bn"}, 
+            {"Basque", "eu"}, {"Korean", "ko"}, {"Belarusian", "be"}, 
+            {"Bulgarian", "bg"}, {"Catalan", "ca"}, {"Chinese Simplified", "zh-CN"},
             {"Chinese Traditional", "zh-TW"}, {"Croatian", "hr"}, {"Czech", "cs"},
             {"Danish", "da"}, {"Dutch", "nl"}, {"English", "en"},
             {"Esperanto", "eo"}, {"Estonian", "et"}, {"Filipino", "tl"},
@@ -123,7 +124,7 @@ namespace Wox.Plugin.GoogleTranslate
                             IcoPath = "Images\\pic.png",
                             Action = e =>
                             {
-                                _context.API.ChangeQuery(query.RawQuery + countrycode + " ");
+                                _context.API.ChangeQuery(query.RawQuery + " " + countrycode + " ");
                                 return false;
                             }
                         });
@@ -146,8 +147,8 @@ namespace Wox.Plugin.GoogleTranslate
                         Action = e =>
                         {
                             Process.Start(
-                                "http://www.google.com/translate_t?hl=en&ie=UTF8&text=" + input
-                                + "&langpair=" + from + "|" + to);
+                                "https://translate.google.com/?hl=en&ie=UTF8&text=" + input + "&langpair=" + from + "|" + to 
+                                + "#" + from + "/" + to + "/" + input);
                             return false;
                         }
                     });
@@ -204,11 +205,11 @@ namespace Wox.Plugin.GoogleTranslate
         /// </returns>
         public string TranslateText(string input, string from, string to)
         {
-            var str1 =
-                GetPageHtml($"http://www.google.com/translate_t?hl=en&ie=UTF8&text={input}&langpair={from}|{to}");
-            var str2 = str1.Substring(str1.IndexOf("<span title=\"") + "<span title=\"".Length);
-            var str3 = str2.Substring(str2.IndexOf(">") + 1);
-            return HttpUtility.HtmlDecode(str3.Substring(0, str3.IndexOf("</span>")).Trim());
+            var html = GetPageHtml($"https://translate.google.com/m?hl=en&ie=UTF8&sl={from}&tl={to}&q={input}");
+            var doc = new HtmlDocument();
+            doc.LoadHtml(html);
+            string result = doc.DocumentNode.SelectSingleNode("//div[@class='result-container']").InnerText;
+            return result;
         }
 
         /// <summary>
